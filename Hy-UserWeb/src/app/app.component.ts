@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoadingService } from './core/services/loading.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'Hy-UserWeb';
+export class AppComponent implements OnInit {
+    title = 'listen';
+
+    constructor(private loadingService: LoadingService) {
+        this.loadingService.startLoading();
+    }
+
+    ngOnInit() {
+    }
 }
