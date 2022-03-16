@@ -1,0 +1,56 @@
+
+<div class=" content">
+  <div class=" row">
+
+    <div *ngFor= "let artist of artistsList" class=" col-md-4">
+      <div  class=" card card-user">
+        <div class=" card-body">
+          <p class=" card-text"></p>
+          <div class=" author">
+            <div class=" block block-one"></div>
+            <div class=" block block-two"></div>
+            <div class=" block block-three"></div>
+            <div class=" block block-four"></div>
+            <a href="javascript:void(0)">
+              <img alt="..." class=" avatar" src={{artist.PhotProfile}}/>
+
+              <h5 class=" title">{{artist.name}} {{artist.lastName}}</h5>
+            </a>
+            <p class=" description">{{artist.email}}</p>
+          </div>
+          <div class=" card-description">
+            some text
+          </div>
+          <button class=" btn btn-fill btn-danger" *ngIf="artist.banned" disabled  type="submit">ban</button>
+          <button class=" btn btn-fill btn-success" *ngIf="artist.banned" (click)="activate(artist._id)" type="submit">activate</button>
+          <button class=" btn btn-fill btn-danger" *ngIf="!artist.banned"  (click)="ban(artist._id)" type="submit">ban</button>
+          <button class=" btn btn-fill btn-success" *ngIf="!artist.banned" disabled type="submit">activate</button>
+        </div>
+        <div class=" card-footer">
+          <div class=" button-container">
+            <button
+              class=" btn btn-icon btn-round btn-facebook"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-facebook"> </i>
+            </button>
+            <button
+              class=" btn btn-icon btn-round btn-twitter"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-twitter"> </i>
+            </button>
+            <button
+              class=" btn btn-icon btn-round btn-google"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-google-plus"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>

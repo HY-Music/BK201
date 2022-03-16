@@ -16,11 +16,12 @@ const users = require("./routes/users");
 const myUsers = require("./routes/myUser");
 const myFeedback = require("./routes/userFeedback");
 const feedbacks = require("./routes/feedback")
+const adminRoute = require("./routes/admin")
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use("/admin",adminRoute)
 app.listen(process.env.PORT || port, () => {
   console.log(`Express server listening on  ${port}`);
 });
